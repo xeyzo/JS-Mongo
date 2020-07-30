@@ -21,5 +21,16 @@ const Data = mongoose.model('Data', Schema({
     const all = await Data.find();
   }
 
+  
+    const Data = mongoose.model('Data', DataSchema, 'test');
+ 
+    Data1 = new Data({ kegiatan: 'Survey co-working space di Jogja'});
+  
+    Data1.save(function (err, data) {
+      if (err) return console.error(err);
+      console.log(data.kegiatan + " saved add data.");
+    });
+
+  
   mongoose.disconnect();
 
